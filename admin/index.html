@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yönetim Paneli | Avukat Web Tasarımı</title>
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Yönetim Paneli Özel Tasarımı -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    /* CMS Üst Menü (Header) Rengi */
+    div[data-testid="app-header"], header {
+      background-color: #111c3a !important;
+      border-bottom: 2px solid #c5a880 !important;
+    }
+
+    /* Üst menü buton renkleri */
+    div[data-testid="app-header"] a, header a, header span, header button {
+      color: #fff !important;
+    }
+
+    /* Kaydet / Yayınla Butonları Altın Rengi */
+    button[class*="Button"], div[role="button"], a[class*="Button"] {
+      border-radius: 8px !important;
+      font-family: 'Inter', sans-serif !important;
+      transition: all 0.3s ease !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      font-weight: 700 !important;
+    }
+
+    /* Sol menü genişliği ve tasarımı */
+    aside {
+      background-color: #f8f9fc !important;
+      border-right: 1px solid #e2e8f0 !important;
+    }
+
+    /* Makale Editörünü Word Belgesi (A4) Gibi Büyütme ve Tasarlama */
+    div[data-slate-editor="true"] {
+      min-height: 700px !important;
+      background-color: #ffffff !important;
+      padding: 50px 60px !important;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 4px !important;
+      font-size: 16px !important;
+      line-height: 1.8 !important;
+      color: #333 !important;
+      margin-top: 10px !important;
+      margin-bottom: 20px !important;
+    }
+
+    /* Koleksiyon Listesi Kartları */
+    a[class*="Card"] {
+      border-radius: 12px !important;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+    
+    a[class*="Card"]:hover {
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
+      transform: translateY(-2px) !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Decap CMS script -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Site içi CSS dosyamızı yönetim paneli önizlemesine entegre edelim
+    CMS.registerPreviewStyle("../css/style.css");
+
+    // 1. Metin Hizalama Bileşeni (Sağa, Sola, Ortaya)
+    CMS.registerEditorComponent({
+      id: "align",
+      label: "Metin Hizalama",
+      fields: [
+        {
+          name: "alignment",
+          label: "Hizalama Yönü",
+          widget: "select",
+          options: [
+            {label: "Sola Yasla", value: "left"},
+            {label: "Ortala", value: "center"},
+            {label: "Sağa Yasla", value: "right"},
+            {label: "İki Yana Yasla", value: "justify"}
+          ],
+          default: "center"
+        },
+        {
+          name: "content",
+          label: "Metin İçeriği",
+          widget: "markdown"
+        }
+      ],
+      pattern: /^<div style="text-align: (.*?)">(.*?)<\/div>$/ms,
+      fromBlock: function(match) {
+        return { alignment: match[1], content: match[2] };
+      },
+      toBlock: function(obj) {
+        return '<div style="text-align: ' + (obj.alignment || 'left') + '">\n\n' + (obj.content || '') + '\n\n</div>';
+      },
+      toPreview: function(obj) {
+        return '<div style="text-align: ' + (obj.alignment || 'left') + '">' + (obj.content || '') + '</div>';
+      }
+    });
+
+    // 2. Kanun / Önemli Vurgu Bileşeni
+    CMS.registerEditorComponent({
+      id: "law_quote",
+      label: "Kanun Maddesi / Vurgu",
+      fields: [
+        {name: "title", label: "Başlık (Örn: TMK Madde 166)", widget: "string"},
+        {name: "content", label: "İçerik Metni", widget: "text"}
+      ],
+      pattern: /^<blockquote class="law-quote"><strong>(.*?)<\/strong><br>(.*?)<\/blockquote>$/ms,
+      fromBlock: function(match) {
+        return { title: match[1], content: match[2] };
+      },
+      toBlock: function(obj) {
+        return '<blockquote class="law-quote"><strong>' + (obj.title || '') + '</strong><br>\n\n' + (obj.content || '') + '\n\n</blockquote>';
+      },
+      toPreview: function(obj) {
+        return '<blockquote class="law-quote" style="border-left: 4px solid #c5a880; background: rgba(197, 168, 128, 0.1); padding: 15px; margin: 20px 0; border-radius: 4px;"><strong>' + (obj.title || '') + '</strong><br>' + (obj.content || '') + '</blockquote>';
+      }
+    });
+
+    // 3. YouTube Video Bileşeni
+    CMS.registerEditorComponent({
+      id: "youtube",
+      label: "YouTube Video",
+      fields: [
+        {name: "id", label: "Video Linkindeki ID (Örn: v=dQw4w9WgXcQ ise sadece dQw4w9WgXcQ)", widget: "string"}
+      ],
+      pattern: /^<iframe width="100%" height="400" src="https:\/\/www\.youtube\.com\/embed\/(.*?)".*?><\/iframe>$/,
+      fromBlock: function(match) {
+        return { id: match[1] };
+      },
+      toBlock: function(obj) {
+        return '<iframe width="100%" height="400" src="https://www.youtube.com/embed/' + (obj.id || '') + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius:12px; margin:20px 0;"></iframe>';
+      },
+      toPreview: function(obj) {
+        return '<img src="http://img.youtube.com/vi/' + (obj.id || '') + '/hqdefault.jpg" alt="Youtube Video" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;"/>';
+      }
+    });
+  </script>
+</body>
+</html>

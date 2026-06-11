@@ -1,0 +1,234 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Yönetim Panelini Türkçe Yap
+locale: "tr"
+
+# Yerel geliştirme sırasında CMS'i test etmeyi sağlar
+local_backend: true
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site_content"
+    label: "Site İçerik Yönetimi"
+    files:
+      - file: "data/content.json"
+        label: "Web Sitesi Tüm Bilgileri"
+        name: "content"
+        fields:
+          - label: "1. Arama Motoru Ayarları (SEO)"
+            name: "meta"
+            widget: "object"
+            fields:
+              - label: "Tarayıcı Sekme Başlığı"
+                name: "title"
+                widget: "string"
+                description: "Tarayıcı sekmesinde görünecek olan sayfa başlığıdır. Google aramalarında da bu başlık listelenir. (Örn: Av. Mert A. | Hukuk Bürosu)"
+              
+              - label: "Arama Motoru Açıklaması"
+                name: "description"
+                widget: "text"
+                description: "Google aramalarında sitenizin altında çıkacak olan 1-2 cümlelik özet açıklamadır. Arama motorlarında öne çıkmak için önemlidir."
+          
+          - label: "2. Logo ve İsim Ayarları"
+            name: "logo"
+            widget: "object"
+            fields:
+              - label: "Adı / Ön Ek"
+                name: "name"
+                widget: "string"
+                description: "Logonuzun beyaz renkli görünen ilk kısmıdır. (Örn: Av. Mert)"
+              
+              - label: "Soyadı / Son Ek"
+                name: "surname"
+                widget: "string"
+                description: "Logonuzun altın sarısı renkli görünen ikinci kısmıdır. (Örn: Ay)"
+          
+          - label: "3. Ana Giriş (Hero) Alanı"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Üst Küçük Başlık"
+                name: "subtitle"
+                widget: "string"
+                description: "Giriş ekranında adınızın hemen üstünde küçük harflerle yazan slogandır. (Örn: Savunma & Danışmanlık)"
+              
+              - label: "Ana Başlık (Adınız)"
+                name: "title"
+                widget: "string"
+                description: "Giriş ekranındaki en büyük, ana başlık alanıdır. Genellikle adınız soyadınız yazılır. (Örn: Av. Mert A.)"
+              
+              - label: "Açıklama Yazısı"
+                name: "description"
+                widget: "text"
+                description: "Giriş ekranındaki ana başlığın hemen altında yer alan, hukuk büronuzu tanıtan kısa giriş yazısıdır."
+          
+          - label: "4. İletişim Bilgileri (Tüm Sitede Kullanılır)"
+            name: "contact"
+            widget: "object"
+            fields:
+              - label: "Telefon Numarası (Görünür)"
+                name: "phone"
+                widget: "string"
+                description: "Sitede yazı olarak görüntülenecek telefon numarasıdır. (Örn: 0212 652 15 44)"
+              
+              - label: "Telefon Arama Linki (Tıklanabilir)"
+                name: "phone_raw"
+                widget: "string"
+                description: "Müvekkiller butona tıkladığında doğrudan arama yapabilmesi için aralarında boşluk bırakmadan, başına +90 koyarak yazın. (Örn: +902126521544)"
+              
+              - label: "WhatsApp Hattı (Görünür)"
+                name: "whatsapp"
+                widget: "string"
+                description: "Sitede görüntülenecek WhatsApp numarasıdır. (Örn: 0532 749 66 20)"
+              
+              - label: "WhatsApp Mesaj Linki (Tıklanabilir)"
+                name: "whatsapp_raw"
+                widget: "string"
+                description: "Tıklandığında WhatsApp uygulamasının açılması için aralarında boşluk bırakmadan, başına +90 koyarak yazın. (Örn: +905327496620)"
+              
+              - label: "E-Posta Adresi"
+                name: "email"
+                widget: "string"
+                description: "Hukuk büronuzun resmi e-posta adresidir. (Örn: info@avmerta.av.tr)"
+              
+              - label: "Ofis Adresi"
+                name: "address"
+                widget: "text"
+                description: "Ofisinizin resmi açık adresidir. Hem iletişim kartında hem de sayfa altında (footer) görüntülenir."
+          
+          - label: "5. Çalışma (Faaliyet) Alanları Kartları"
+            name: "expertise"
+            widget: "list"
+            summary: "{{fields.title}}"
+            description: "Hukuk büronuzun uzmanlık alanlarını ekleyip düzenleyebilirsiniz. Kart sırasını sürükleyerek değiştirebilirsiniz."
+            fields:
+              - label: "Çalışma Alanı Başlığı"
+                name: "title"
+                widget: "string"
+                description: "Çalışma alanının adı. (Örn: Ceza Hukuku)"
+              
+              - label: "Detaylı Açıklama"
+                name: "description"
+                widget: "text"
+                description: "Bu çalışma alanında sunduğunuz hizmetlerin ve baktığınız davaların kısa bir özetidir."
+              
+              - label: "Görsel Simge / İkon"
+                name: "icon"
+                widget: "select"
+                description: "Kartın üzerinde görünecek simgeyi listeden kolayca seçebilirsiniz."
+                options:
+                  - { label: "Tokmak (Ceza/Karar)", value: "fa-solid fa-gavel" }
+                  - { label: "Terazi (Adalet/Hukuk)", value: "fa-solid fa-scale-balanced" }
+                  - { label: "Bina / Ofis (Gayrimenkul/İmar)", value: "fa-solid fa-building" }
+                  - { label: "İnsanlar (Aile/Boşanma/Miras)", value: "fa-solid fa-users" }
+                  - { label: "Para / Dolar (Tazminat/Ticaret)", value: "fa-solid fa-hand-holding-dollar" }
+                  - { label: "Kalkan (Savunma/Koruma)", value: "fa-solid fa-shield-halved" }
+                  - { label: "Kalem / Dosya (Sözleşmeler)", value: "fa-solid fa-file-signature" }
+                  - { label: "Kitap (Kanunlar/Danışmanlık)", value: "fa-solid fa-book" }
+                  - { label: "Ev (Kira/Mülkiyet)", value: "fa-solid fa-house-chimney" }
+
+
+
+          - label: "7. Kredi Kartı Ödeme ve Hesap Bilgileri"
+            name: "payment"
+            widget: "object"
+            fields:
+              - label: "Başlık"
+                name: "title"
+                widget: "string"
+                description: "Ödeme bölümünün ana başlığı. (Örn: Online Ödeme & Banka Hesapları)"
+              
+              - label: "Açıklama Metni"
+                name: "description"
+                widget: "text"
+                description: "Ödeme seçeneklerinizi açıklayan metindir."
+              
+              - label: "Kredi Kartı Ödeme Sayfası Linki"
+                name: "barokart_url"
+                widget: "string"
+                description: "'Kredi Kartı ile Öde' butonuna basıldığında açılacak olan ödeme linkiniz (Örn: Barokart, Param, e-Barobirlik Pos vb. tahsilat adresiniz)."
+              
+              - label: "Banka Hesaplarını Sitede Göster"
+                name: "show_bank_accounts"
+                widget: "boolean"
+                default: true
+                required: false
+                description: "Eğer banka IBAN bilgilerinizi web sitenizde herkesten gizlemek isterseniz bu tiki kaldırın. (Kapalı olursa sadece Kredi Kartı butonu görünür)"
+              
+              - label: "Banka Hesapları (IBAN)"
+                name: "accounts"
+                widget: "list"
+                summary: "{{fields.bank_name}} - {{fields.iban}}"
+                description: "Havale/EFT için banka hesaplarınızı ekleyip düzenleyebilirsiniz."
+                fields:
+                  - label: "Banka Adı"
+                    name: "bank_name"
+                    widget: "string"
+                    description: "(Örn: Garanti BBVA)"
+                  
+                  - label: "Hesap Sahibi (Alıcı)"
+                    name: "owner"
+                    widget: "string"
+                    description: "Alıcı hanesine yazılması gereken ad soyad. (Örn: Mert A.)"
+                  
+                  - label: "IBAN Numarası"
+                    name: "iban"
+                    widget: "string"
+                    description: "Kopyalamanın düzgün çalışabilmesi için aralarında boşluk bırakarak yazın. (Örn: TR12 0006 2000 0000 1234 5678 90)"
+
+          - label: "8. Google Harita Entegrasyonu"
+            name: "gmb"
+            widget: "object"
+            fields:
+              - label: "Google Harita Konum Linki (Yol Tarifi Al)"
+                name: "directions_url"
+                widget: "string"
+                description: "'Yol Tarifi Al' butonuna tıklandığında açılacak olan Google Haritalar konum linkiniz."
+              
+              - label: "Google Harita Embed (Iframe) Kaynağı URL'si"
+                name: "maps_iframe_url"
+                widget: "string"
+                description: "Google Haritalar'dan aldığınız paylaşım embed kodundaki (iframe) src= tırnakları arasındaki adrestir. (Örn: https://www.google.com/maps/embed?...)"
+
+  - name: "articles_data"
+    label: "Makaleler & Yayınlar"
+    files:
+      - file: "data/articles.json"
+        label: "Tüm Makaleler"
+        name: "articles"
+        fields:
+          - label: "Makale Listesi"
+            name: "items"
+            widget: "list"
+            label_singular: "Makale"
+            summary: "{{fields.title}} - {{fields.date}}"
+            description: "Makalelerinizi ve yayınlarınızı buradan ekleyebilir, silebilir veya düzenleyebilirsiniz."
+            fields:
+              - {label: "Makale Başlığı", name: "title", widget: "string"}
+              - {label: "Kapak Fotoğrafı", name: "image", widget: "image", required: false, description: "Makale kartında ve detayında görünecek fotoğraf"}
+              - {label: "Yayın Tarihi", name: "date", widget: "date", format: "YYYY-MM-DD"}
+              - label: "Etiketler / Kategoriler"
+                name: "tags"
+                widget: "select"
+                multiple: true
+                required: false
+                options: ["Ceza Hukuku", "İş Hukuku", "Boşanma ve Aile Hukuku", "Tazminat Hukuku", "Ticaret Hukuku", "Gayrimenkul Hukuku", "Miras Hukuku", "Bilişim Hukuku", "İdare Hukuku", "İcra ve İflas Hukuku"]
+                description: "Yazınızın ilgili olduğu hukuki alanları üzerine tıklayarak (birden fazla) seçebilirsiniz."
+              - {label: "Taslak (Yayından Kaldır)", name: "draft", widget: "boolean", default: false, required: false, description: "Seçili (True) olursa yazıyı kaydedersiniz ama sitede kimse göremez."}
+              - {label: "Kısa Özet", name: "summary", widget: "text", required: false, description: "Boş bırakırsanız sistem makalenin ilk cümlesini otomatik özet yapar."}
+              - label: "Tam İçerik (Makale Metni)"
+                name: "content"
+                widget: "markdown"
+                buttons: ["bold", "italic", "heading-two", "heading-three", "link", "quote", "bulleted-list", "numbered-list"]
+              - label: "Arama Motoru (Google SEO) Ayarları"
+                name: "seo"
+                widget: "object"
+                required: false
+                collapsed: true
+                fields:
+                  - {label: "Google'da Görünecek Başlık (Meta Title)", name: "seo_title", widget: "string", required: false, description: "Google arama sonuçlarında en üstte mavi renkle görünen kalın başlıktır. (Önerilen uzunluk: 50-60 karakter)"}
+                  - {label: "Google'da Görünecek Özet (Meta Description)", name: "seo_description", widget: "text", required: false, description: "Google arama sonuçlarında başlığın altında çıkan 1-2 cümlelik açıklamadır. (Önerilen uzunluk: 150-160 karakter)"}

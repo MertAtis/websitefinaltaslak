@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="site-title">Makaleler | Av. Mert A.</title>
+    <meta name="description" id="site-description" content="Avukat Mert A. Hukuk Bürosu Güncel Hukuki Makaleler ve Bültenler">
+    <!-- Style Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .articles-page-section {
+            padding: 160px 0 100px 0;
+            min-height: 80vh;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Glowing Blobs for Liquid Glass Effect -->
+    <div class="bg-glow-container">
+        <div class="glow-blob blob-1"></div>
+        <div class="glow-blob blob-2"></div>
+        <div class="glow-blob blob-3"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="main-header" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" id="nav-logo"><i class="fa-solid fa-scale-balanced"></i> <span class="logo-text-wrapper">Av. Mert <span class="logo-surname">A.</span></span></a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle-btn" aria-label="Menüyü Aç">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu-list">
+                <li><a href="index.html" class="nav-link">Anasayfa</a></li>
+                <li><a href="index.html#faaliyet-alanlari" class="nav-link">Faaliyet Alanları</a></li>
+                <li><a href="#" class="nav-link active">Makaleler</a></li>
+                <li><a href="index.html#odeme" class="nav-link">Ödeme</a></li>
+                <li><a href="index.html#iletisim" class="nav-link">İletişim</a></li>
+                <li><a href="index.html#iletisim" class="contact-btn">Randevu Al</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Makaleler Section -->
+    <section class="articles-page-section" id="makaleler">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hukuki Makaleler & Bültenler</h2>
+                <p class="section-desc">Hukuki uyuşmazlıklar, güncel yargı kararları ve yasal haklarınız hakkında tüm yazılarımız.</p>
+            </div>
+            <div class="articles-grid" id="articles-container">
+                <!-- Tüm Makaleler Dinamik Olarak Yüklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <h3 id="footer-logo">Av. Mert <span>A.</span></h3>
+                    <p id="footer-about">İstanbul Barosu'na kayıtlı olarak, tüm Türkiye genelinde yetkin avukatlık ve hukuki danışmanlık faaliyetleri yürütmekteyiz.</p>
+                </div>
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="index.html#faaliyet-alanlari">Faaliyet Alanları</a></li>
+                        <li><a href="#">Makaleler</a></li>
+                        <li><a href="index.html#odeme">Ödeme</a></li>
+                        <li><a href="index.html#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>Çalışma Alanları</h4>
+                    <ul class="footer-links" id="footer-practice-links">
+                        <!-- Dinamik Olarak Güncellenecek -->
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <p><i class="fa-solid fa-location-dot" style="color: var(--color-primary); margin-right: 8px;"></i> <span id="footer-address"></span></p>
+                    <p><i class="fa-solid fa-phone" style="color: var(--color-primary); margin-right: 8px;"></i> <span id="footer-phone"></span></p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-copy" id="footer-copyright">
+                    &copy; 2026 Avukat Mert A.. Tüm Hakları Saklıdır.
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Makale Detay Modalı -->
+    <div class="modal-overlay" id="article-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+            <span class="modal-date" id="modal-date"></span>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <div class="modal-content-body" id="modal-content-body"></div>
+        </div>
+    </div>
+
+    <!-- Interactive JS Script -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle-btn');
+        const navMenu = document.getElementById('nav-menu-list');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close Mobile Menu on Click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close Mobile Menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Fetch and load dynamic content from JSON
+        fetch('data/content.json?t=' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('JSON dosyası yüklenemedi');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Meta Bilgileri
+                document.title = "Makaleler | " + data.meta.title;
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute('content', "Av. " + data.logo.name + " " + data.logo.surname + " Hukuki Makaleler ve Bültenler");
+                }
+
+                // Logo
+                const logoHtml = `<i class="fa-solid fa-scale-balanced"></i> <span class="logo-text-wrapper">${data.logo.name} <span class="logo-surname">${data.logo.surname}</span></span>`;
+                document.getElementById('nav-logo').innerHTML = logoHtml;
+                document.getElementById('footer-logo').innerHTML = logoHtml;
+
+                // (Makaleler ayrı dosyadan yükleniyor, aşağıda eklendi)
+
+                // Çalışma Alanları (Footer Linkleri)
+                const footerPracticeLinks = document.getElementById('footer-practice-links');
+                if (footerPracticeLinks && data.expertise) {
+                    footerPracticeLinks.innerHTML = '';
+                    data.expertise.forEach(item => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<a href="index.html#faaliyet-alanlari">${item.title}</a>`;
+                        footerPracticeLinks.appendChild(li);
+                    });
+                }
+
+                // Footer Detayları
+                document.getElementById('footer-about').textContent = `${data.logo.name} ${data.logo.surname} Hukuk Bürosu; uyuşmazlıkların çözümünde şeffaflık, güven ve profesyonel etik kurallarından ödün vermeden faaliyet göstermektedir.`;
+                document.getElementById('footer-address').textContent = data.contact.address;
+                document.getElementById('footer-phone').textContent = data.contact.phone;
+                
+                const currentYear = new Date().getFullYear();
+                document.getElementById('footer-copyright').innerHTML = `&copy; ${currentYear} ${data.logo.name} ${data.logo.surname}. Tüm Hakları Saklıdır.`;
+            })
+            .catch(error => {
+                console.error('İçerik yükleme hatası:', error);
+            });
+
+        // Makaleleri Ayrı JSON Dosyasından Çekme
+        fetch('data/articles.json?t=' + new Date().getTime())
+            .then(res => res.json())
+            .then(articleData => {
+                const articlesContainer = document.getElementById('articles-container');
+                if (articlesContainer && articleData.items) {
+                    articlesContainer.innerHTML = '';
+                    
+                    // Sadece taslak olmayanları listele ve tarihe göre azalan sırada sırala
+                    const publishedArticles = articleData.items.filter(a => !a.draft);
+                    const sortedArticles = publishedArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    
+                    sortedArticles.forEach((article, index) => {
+                        const card = document.createElement('div');
+                        card.className = 'article-card has-image';
+                        
+                        const articleDate = new Date(article.date).toLocaleDateString('tr-TR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        let imageHtml = '';
+                        if (article.image) {
+                            imageHtml = `<div class="article-cover" style="background-image: url('${article.image}');"></div>`;
+                        }
+
+                        let tagsHtml = '';
+                        if (article.tags && article.tags.length > 0) {
+                            tagsHtml = `<div class="article-tags">` + article.tags.map(t => `<span class="article-tag">${t}</span>`).join('') + `</div>`;
+                        }
+                        
+                        let summaryText = article.summary;
+                        if (!summaryText && article.content) {
+                            let cleanContent = article.content.replace(/<[^>]*>?/gm, '').replace(/[#*_>]/g, '').trim();
+                            summaryText = cleanContent.length > 120 ? cleanContent.substring(0, 120) + '...' : cleanContent;
+                        }
+
+                        card.innerHTML = `
+                            ${imageHtml}
+                            <div class="article-card-content">
+                                ${tagsHtml}
+                                <span class="article-date">${articleDate}</span>
+                                <h3 class="article-title">${article.title}</h3>
+                                <p class="article-summary">${summaryText}</p>
+                                <a class="article-link" data-index="${index}">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        `;
+                        articlesContainer.appendChild(card);
+                    });
+
+                    // Makale Linki Olayları
+                    articlesContainer.querySelectorAll('.article-link').forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            const idx = e.currentTarget.getAttribute('data-index');
+                            openArticleModal(sortedArticles[idx]);
+                        });
+                    });
+
+                    // Sayfa açıldığında URL'de makale parametresi varsa otomatik aç
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const makaleSlug = urlParams.get('makale');
+                    if (makaleSlug) {
+                        const targetArticle = sortedArticles.find(a => generateSlug(a.title) === makaleSlug);
+                        if (targetArticle) {
+                            openArticleModal(targetArticle);
+                        }
+                    }
+                }
+            })
+            .catch(error => console.error('Makale yükleme hatası:', error));
+
+        // Makale Modalı Fonksiyonları
+        const modal = document.getElementById('article-modal');
+        const modalClose = document.getElementById('modal-close-btn');
+
+        // Türkçe karakterleri ve boşlukları URL'ye uygun hale getiren fonksiyon
+        function generateSlug(text) {
+            let trMap = { 'çÇ':'c', 'ğĞ':'g', 'şŞ':'s', 'üÜ':'u', 'ıİ':'i', 'öÖ':'o' };
+            for(let key in trMap) {
+                text = text.replace(new RegExp('['+key+']','g'), trMap[key]);
+            }
+            return text.toString().toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-]+/g, '')
+                .replace(/\-\-+/g, '-')
+                .replace(/^-+/, '')
+                .replace(/-+$/, '');
+        }
+
+        function openArticleModal(article) {
+            const articleDate = new Date(article.date).toLocaleDateString('tr-TR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('modal-date').textContent = articleDate;
+            document.getElementById('modal-title').textContent = article.title;
+            
+            let contentHtml = article.content
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>');
+
+            let imageHtml = '';
+            if (article.image) {
+                imageHtml = `<img src="${article.image}" alt="${article.title}" class="modal-cover-image">`;
+            }
+
+            let tagsHtml = '';
+            if (article.tags && article.tags.length > 0) {
+                tagsHtml = `<div class="modal-tags">` + article.tags.map(t => `<span class="article-tag">${t}</span>`).join('') + `</div>`;
+            }
+
+            document.getElementById('modal-content-body').innerHTML = imageHtml + tagsHtml + `<p>${contentHtml}</p>`;
+            
+            // URL'yi güncelle
+            const slug = generateSlug(article.title);
+            history.pushState({modal: true}, '', '?makale=' + slug);
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            history.pushState(null, '', window.location.pathname);
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                history.pushState(null, '', window.location.pathname);
+            }
+        });
+    </script>
+</body>
+</html>

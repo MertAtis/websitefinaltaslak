@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="site-title">Av. Mert A. | Hukuk Bürosu & Profesyonel Danışmanlık</title>
+    <meta name="description" id="site-description" content="Avukat Mert A. Hukuk Bürosu; Ceza Hukuku, Tazminat Hukuku, Gayrimenkul Hukuku ve Medeni Hukuk alanlarında premium avukatlık ve hukuki danışmanlık hizmetleri sunmaktadır.">
+    <!-- Style Link -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+    <!-- Background Glowing Blobs for Liquid Glass Effect -->
+    <div class="bg-glow-container">
+        <div class="glow-blob blob-1"></div>
+        <div class="glow-blob blob-2"></div>
+        <div class="glow-blob blob-3"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="main-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#" id="nav-logo"><i class="fa-solid fa-scale-balanced"></i> <span class="logo-text-wrapper">Av. Mert <span class="logo-surname">A.</span></span></a>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle-btn" aria-label="Menüyü Aç">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu-list">
+                <li><a href="#" class="nav-link active">Anasayfa</a></li>
+                <li><a href="#faaliyet-alanlari" class="nav-link">Faaliyet Alanları</a></li>
+                <li><a href="#makaleler" class="nav-link">Makaleler</a></li>
+                <li><a href="#odeme" class="nav-link">Ödeme</a></li>
+                <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+                <li><a href="#iletisim" class="contact-btn">Randevu Al</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle" id="hero-subtitle">Savunma & Danışmanlık</span>
+                <h1 class="hero-title" id="hero-title">Av. Mert A.</h1>
+                <p class="hero-desc" id="hero-desc">
+                    Hukuki uyuşmazlıkların çözümünde analitik yaklaşım, şeffaf bilgi akışı ve mesleki etik kuralları çerçevesinde yüksek kalitede savunma ve danışmanlık hizmeti sunmaktayız.
+                </p>
+                
+                <!-- Action Buttons -->
+                <div class="action-bar-container">
+                    <a href="#iletisim" class="hero-btn"><i class="fa-solid fa-calendar-check"></i> Hemen Randevu Al</a>
+                    <a href="#faaliyet-alanlari" class="hero-btn-secondary">Çalışma Alanlarımız <i class="fa-solid fa-arrow-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas / Expertise -->
+    <section class="expertise" id="faaliyet-alanlari">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Çalışma Alanlarımız</h2>
+                <p class="section-desc">Hukuki sorunların çözümünde teori ve yargısal uygulamaları birlikte ele alarak en doğru stratejiyi kurguluyoruz.</p>
+            </div>
+
+            <div class="expertise-grid" id="expertise-container">
+                <!-- Kartlar Dinamik Olarak Yüklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Makaleler Section -->
+    <section class="articles-section" id="makaleler">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hukuki Makaleler & Bültenler</h2>
+                <p class="section-desc">Hukuki haklarınızı bilmeniz ve en güncel yargı kararlarını takip edebilmeniz için yayınladığımız yazılarımız.</p>
+            </div>
+            <div class="articles-grid" id="articles-container">
+                <!-- Makaleler Dinamik Olarak Yüklenecek -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="makaleler.html" class="hero-btn-secondary" style="padding: 12px 30px; font-size: 0.95rem;"><i class="fa-solid fa-book-open"></i> Tüm Makaleleri Gör</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ödeme Section -->
+    <section class="payment-section" id="odeme">
+        <div class="container">
+            <div class="payment-card">
+                <div class="payment-top-layout">
+                    <div>
+                        <h2 class="section-title" id="payment-title">Online Ödeme & Banka Hesapları</h2>
+                        <p class="payment-desc" id="payment-desc">
+                            Avukatlık ve danışmanlık hizmet bedellerini kredi kartınızla online olarak ödeyebilir veya aşağıdaki hesaplarımıza havale/EFT gönderebilirsiniz.
+                        </p>
+                    </div>
+                    <div class="baro-btn-container">
+                        <a href="#" target="_blank" rel="noopener" id="barokart-link" class="baro-btn"><i class="fa-solid fa-credit-card"></i> Kredi Kartı ile Öde</a>
+                    </div>
+                </div>
+                <h3 class="bank-accounts-title">Banka Hesap Bilgilerimiz</h3>
+                <div class="accounts-grid" id="bank-accounts-container">
+                    <!-- Banka Hesapları Dinamik Yüklenecek -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Section -->
+    <section class="contact-section" id="iletisim">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- İletişim Bilgileri -->
+                <div class="contact-info-wrapper">
+                    <h3>İletişim Bilgilerimiz</h3>
+                    <p>Hukuki danışmanlık hizmetlerimiz ve randevu talepleriniz için bizimle doğrudan iletişime geçebilirsiniz.</p>
+                    
+                    <div class="contact-cards-container">
+                        <!-- Telefon -->
+                        <a href="#" id="contact-card-phone-link" class="glass-card contact-detail-card">
+                            <div class="glass-card-shine"></div>
+                            <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <span class="card-label">Telefon</span>
+                                <h4 class="card-value-text" id="contact-card-phone">0212 652 15 44</h4>
+                            </div>
+                            <div class="glass-card-curl"></div>
+                        </a>
+                        
+                        <!-- WhatsApp -->
+                        <a href="#" id="contact-card-whatsapp-link" target="_blank" rel="noopener" class="glass-card contact-detail-card">
+                            <div class="glass-card-shine"></div>
+                            <div class="card-icon" style="color: #25D366;"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <span class="card-label">WhatsApp Hattı</span>
+                                <h4 class="card-value-text" id="contact-card-whatsapp">0532 749 66 20</h4>
+                            </div>
+                            <div class="glass-card-curl"></div>
+                        </a>
+                        
+                        <!-- E-Posta -->
+                        <a href="#" id="contact-card-email-link" class="glass-card contact-detail-card">
+                            <div class="glass-card-shine"></div>
+                            <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="card-label">E-Posta</span>
+                                <h4 class="card-value-text" id="contact-card-email">info@avmerta.av.tr</h4>
+                            </div>
+                            <div class="glass-card-curl"></div>
+                        </a>
+                        
+                        <!-- Adres -->
+                        <div class="glass-card contact-detail-card">
+                            <div class="glass-card-shine"></div>
+                            <div class="card-icon" style="color: var(--color-primary);"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span class="card-label">Ofis Adresi</span>
+                                <h4 class="card-value-text" id="contact-card-address" style="font-size: 0.95rem; font-weight: 500; line-height: 1.5;">M. Fevzi Çakmak Cd. 1. Sok. No: 9, Daire: 6, Şirinevler Meydanı, Bahçelievler / İstanbul</h4>
+                            </div>
+                            <div class="glass-card-curl"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Harita ve Google İşletmem -->
+                <div class="contact-map-wrapper">
+                    <div class="map-container">
+                        <iframe id="google-map-iframe" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="gmb-button-bar">
+                        <a href="#" target="_blank" rel="noopener" id="gmb-directions" class="gmb-btn"><i class="fa-solid fa-map-location-dot"></i> Yol Tarifi Al (Google Haritalar)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <h3 id="footer-logo">Av. Mert <span>A.</span></h3>
+                    <p id="footer-about">İstanbul Barosu'na kayıtlı olarak, tüm Türkiye genelinde yetkin avukatlık ve hukuki danışmanlık faaliyetleri yürütmekteyiz.</p>
+                </div>
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Anasayfa</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#faaliyet-alanlari">Faaliyet Alanları</a></li>
+                        <li><a href="#makaleler">Makaleler & Kararlar</a></li>
+                        <li><a href="#odeme">Ödeme</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>Çalışma Alanları</h4>
+                    <ul class="footer-links" id="footer-practice-links">
+                        <!-- Dinamik Olarak Güncellenecek -->
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <p><i class="fa-solid fa-location-dot" style="color: var(--color-primary); margin-right: 8px;"></i> <span id="footer-address">M. Fevzi Çakmak Cd. 1. Sok. No: 9, Daire: 6, Şirinevler Meydanı, Bahçelievler / İstanbul</span></p>
+                    <p><i class="fa-solid fa-phone" style="color: var(--color-primary); margin-right: 8px;"></i> <span id="footer-phone">0212 652 15 44</span></p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-copy" id="footer-copyright">
+                    &copy; 2026 Avukat Mert A.. Tüm Hakları Saklıdır.
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Makale Detay Modalı -->
+    <div class="modal-overlay" id="article-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close-btn" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+            <span class="modal-date" id="modal-date"></span>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <div class="modal-content-body" id="modal-content-body"></div>
+        </div>
+    </div>
+
+    <!-- IBAN Kopyalandı Bildirimi (Toast) -->
+    <div class="copy-toast" id="copy-toast">IBAN Kopyalandı!</div>
+
+    <!-- Interactive JS Script -->
+    <script>
+        // Sticky Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle-btn');
+        const navMenu = document.getElementById('nav-menu-list');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close Mobile Menu on Click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close Mobile Menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Active Link Highlighter on Scroll
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollPos = window.scrollY + 150;
+
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current) && current !== '') {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fetch and load dynamic content from JSON
+        fetch('data/content.json?t=' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('JSON dosyası yüklenemedi');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Meta Bilgileri
+                document.title = data.meta.title;
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute('content', data.meta.description);
+                }
+
+                // Logo
+                const logoHtml = `<i class="fa-solid fa-scale-balanced"></i> <span class="logo-text-wrapper">${data.logo.name} <span class="logo-surname">${data.logo.surname}</span></span>`;
+                document.getElementById('nav-logo').innerHTML = logoHtml;
+                document.getElementById('footer-logo').innerHTML = logoHtml;
+
+                // Hero
+                document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
+                document.getElementById('hero-title').textContent = data.hero.title;
+                document.getElementById('hero-desc').textContent = data.hero.description;
+
+                // Çalışma Alanları (Grid ve Footer Linkleri)
+                const container = document.getElementById('expertise-container');
+                const footerPracticeLinks = document.getElementById('footer-practice-links');
+                
+                if (container) {
+                    container.innerHTML = '';
+                    if (footerPracticeLinks) footerPracticeLinks.innerHTML = '';
+                    
+                    data.expertise.forEach(item => {
+                        // Grid Kartı
+                        const card = document.createElement('div');
+                        card.className = 'glass-card';
+                        card.innerHTML = `
+                            <div class="glass-card-shine"></div>
+                            <div>
+                                <div class="card-icon"><i class="${item.icon}"></i></div>
+                                <h3 class="card-title">${item.title}</h3>
+                                <p class="card-desc">${item.description}</p>
+                            </div>
+                            <a href="#iletisim" class="card-link">Hukuki Danışmanlık Al <span><i class="fa-solid fa-chevron-right"></i></span></a>
+                            <div class="glass-card-curl"></div>
+                        `;
+                        container.appendChild(card);
+
+                        // Footer Linki
+                        if (footerPracticeLinks) {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<a href="#faaliyet-alanlari">${item.title}</a>`;
+                            footerPracticeLinks.appendChild(li);
+                        }
+                    });
+                }
+
+                // (Makaleler artık articles.json dosyasından ayrı olarak çekiliyor, aşağıda eklendi)
+
+                // Ödeme Bilgileri ve Banka Hesapları
+                document.getElementById('payment-title').textContent = data.payment.title;
+                document.getElementById('payment-desc').textContent = data.payment.description;
+                document.getElementById('barokart-link').href = data.payment.barokart_url;
+
+                const bankContainer = document.getElementById('bank-accounts-container');
+                const bankTitle = document.querySelector('.bank-accounts-title');
+
+                // Banka hesaplarını gizle/göster ayarı
+                if (data.payment.show_bank_accounts === false) {
+                    if (bankContainer) bankContainer.style.display = 'none';
+                    if (bankTitle) bankTitle.style.display = 'none';
+                } else {
+                    if (bankContainer) bankContainer.style.display = 'grid';
+                    if (bankTitle) bankTitle.style.display = 'block';
+
+                    if (bankContainer && data.payment.accounts) {
+                        bankContainer.innerHTML = '';
+                    data.payment.accounts.forEach(acc => {
+                        const card = document.createElement('div');
+                        card.className = 'bank-card';
+                        card.innerHTML = `
+                            <span class="bank-name">${acc.bank_name}</span>
+                            <span class="bank-owner">${acc.owner}</span>
+                            <div class="bank-iban-wrapper">
+                                <span class="iban-text">${acc.iban}</span>
+                                <button class="copy-btn" data-iban="${acc.iban}" title="IBAN Kopyala"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                        `;
+                        bankContainer.appendChild(card);
+                    });
+
+                    // IBAN Kopyalama Olayı
+                    bankContainer.querySelectorAll('.copy-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const iban = e.currentTarget.getAttribute('data-iban');
+                            navigator.clipboard.writeText(iban).then(() => {
+                                showCopyToast();
+                            });
+                        });
+                    });
+                }
+            }
+
+            // Google Harita & İşletmem Entegrasyonu
+                document.getElementById('google-map-iframe').src = data.gmb.maps_iframe_url;
+                document.getElementById('gmb-directions').href = data.gmb.directions_url;
+
+                // İletişim Bölümü Kartları
+                document.getElementById('contact-card-phone').textContent = data.contact.phone;
+                document.getElementById('contact-card-phone-link').href = `tel:${data.contact.phone_raw}`;
+                
+                document.getElementById('contact-card-whatsapp').textContent = data.contact.whatsapp;
+                document.getElementById('contact-card-whatsapp-link').href = `https://wa.me/${data.contact.whatsapp_raw}`;
+                
+                document.getElementById('contact-card-email').textContent = data.contact.email;
+                document.getElementById('contact-card-email-link').href = `mailto:${data.contact.email}`;
+                
+                document.getElementById('contact-card-address').textContent = data.contact.address;
+
+                // Footer Detayları
+                document.getElementById('footer-about').textContent = `${data.logo.name} ${data.logo.surname} Hukuk Bürosu; uyuşmazlıkların çözümünde şeffaflık, güven ve profesyonel etik kurallarından ödün vermeden faaliyet göstermektedir.`;
+                document.getElementById('footer-address').textContent = data.contact.address;
+                document.getElementById('footer-phone').textContent = data.contact.phone;
+                
+                const currentYear = new Date().getFullYear();
+                document.getElementById('footer-copyright').innerHTML = `&copy; ${currentYear} ${data.logo.name} ${data.logo.surname}. Tüm Hakları Saklıdır.`;
+            })
+            .catch(error => {
+                console.error('İçerik yükleme hatası:', error);
+            });
+
+        // Makaleleri Ayrı JSON Dosyasından Çekme
+        fetch('data/articles.json?t=' + new Date().getTime())
+            .then(res => res.json())
+            .then(articleData => {
+                const articlesContainer = document.getElementById('articles-container');
+                if (articlesContainer && articleData.items) {
+                    articlesContainer.innerHTML = '';
+                    
+                    // Taslak olmayanları al ve tarihe göre azalan sırada sırala
+                    const publishedArticles = articleData.items.filter(a => !a.draft);
+                    const sortedArticles = publishedArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    
+                    // İlk 2 makaleyi al
+                    const homepageArticles = sortedArticles.slice(0, 2);
+                    
+                    homepageArticles.forEach((article, index) => {
+                        const card = document.createElement('div');
+                        card.className = 'article-card has-image';
+                        
+                        const articleDate = new Date(article.date).toLocaleDateString('tr-TR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        let imageHtml = '';
+                        if (article.image) {
+                            imageHtml = `<div class="article-cover" style="background-image: url('${article.image}');"></div>`;
+                        }
+
+                        let tagsHtml = '';
+                        if (article.tags && article.tags.length > 0) {
+                            tagsHtml = `<div class="article-tags">` + article.tags.map(t => `<span class="article-tag">${t}</span>`).join('') + `</div>`;
+                        }
+                        
+                        let summaryText = article.summary;
+                        if (!summaryText && article.content) {
+                            let cleanContent = article.content.replace(/<[^>]*>?/gm, '').replace(/[#*_>]/g, '').trim();
+                            summaryText = cleanContent.length > 120 ? cleanContent.substring(0, 120) + '...' : cleanContent;
+                        }
+
+                        card.innerHTML = `
+                            ${imageHtml}
+                            <div class="article-card-content">
+                                ${tagsHtml}
+                                <span class="article-date">${articleDate}</span>
+                                <h3 class="article-title">${article.title}</h3>
+                                <p class="article-summary">${summaryText}</p>
+                                <a class="article-link" data-index="${index}">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        `;
+                        articlesContainer.appendChild(card);
+                    });
+
+                    // Makale Linki Olayları
+                    articlesContainer.querySelectorAll('.article-link').forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            const idx = e.currentTarget.getAttribute('data-index');
+                            openArticleModal(homepageArticles[idx]);
+                        });
+                    });
+
+                    // Sayfa açıldığında URL'de makale parametresi varsa otomatik aç
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const makaleSlug = urlParams.get('makale');
+                    if (makaleSlug) {
+                        const targetArticle = homepageArticles.find(a => generateSlug(a.title) === makaleSlug);
+                        if (targetArticle) {
+                            openArticleModal(targetArticle);
+                        }
+                    }
+                }
+            })
+            .catch(error => console.error('Makale yükleme hatası:', error));
+
+        // Makale Modalı Fonksiyonları
+        const modal = document.getElementById('article-modal');
+        const modalClose = document.getElementById('modal-close-btn');
+
+        // Türkçe karakterleri ve boşlukları URL'ye uygun hale getiren fonksiyon
+        function generateSlug(text) {
+            let trMap = { 'çÇ':'c', 'ğĞ':'g', 'şŞ':'s', 'üÜ':'u', 'ıİ':'i', 'öÖ':'o' };
+            for(let key in trMap) {
+                text = text.replace(new RegExp('['+key+']','g'), trMap[key]);
+            }
+            return text.toString().toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-]+/g, '')
+                .replace(/\-\-+/g, '-')
+                .replace(/^-+/, '')
+                .replace(/-+$/, '');
+        }
+
+        function openArticleModal(article) {
+            const articleDate = new Date(article.date).toLocaleDateString('tr-TR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('modal-date').textContent = articleDate;
+            document.getElementById('modal-title').textContent = article.title;
+            
+            // Markdown basit dönüştürücü (Satır boşluklarını p/br yapar)
+            let contentHtml = article.content
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>');
+
+            let imageHtml = '';
+            if (article.image) {
+                imageHtml = `<img src="${article.image}" alt="${article.title}" class="modal-cover-image">`;
+            }
+
+            let tagsHtml = '';
+            if (article.tags && article.tags.length > 0) {
+                tagsHtml = `<div class="modal-tags">` + article.tags.map(t => `<span class="article-tag">${t}</span>`).join('') + `</div>`;
+            }
+
+            document.getElementById('modal-content-body').innerHTML = imageHtml + tagsHtml + `<p>${contentHtml}</p>`;
+            
+            // URL'yi güncelle
+            const slug = generateSlug(article.title);
+            history.pushState({modal: true}, '', '?makale=' + slug);
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            history.pushState(null, '', window.location.pathname);
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                history.pushState(null, '', window.location.pathname);
+            }
+        });
+
+        // IBAN Kopyalandı Toast Bildirimi
+        function showCopyToast() {
+            const toast = document.getElementById('copy-toast');
+            toast.classList.add('active');
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 2000);
+        }
+
+        // Netlify Identity login/redirect handler
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

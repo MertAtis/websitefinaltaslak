@@ -1,0 +1,76 @@
+{
+  "contact": {
+    "phone": "0212 652 15 44",
+    "phone_raw": "+902126521544",
+    "whatsapp": "0532 749 66 20",
+    "whatsapp_raw": "+905327496620",
+    "email": "info@avmerta.av.tr",
+    "address": "M. Fevzi Çakmak Cd. 1. Sok. No: 9, Daire: 6, Şirinevler Meydanı, Bahçelievler / İstanbul"
+  },
+  "meta": {
+    "title": "Av. Mert A. | Hukuk Bürosu & Profesyonel Danışmanlık",
+    "description": "Avukat Mert A. Hukuk Bürosu; Ceza Hukuku, Tazminat Hukuku, Gayrimenkul Hukuku ve Medeni Hukuk alanlarında premium avukatlık ve hukuki danışmanlık hizmetleri sunmaktadır."
+  },
+  "payment": {
+    "title": "Online Ödeme & Hesap Bilgileri",
+    "description": "Danışmanlık ve avukatlık hizmet bedellerinizi e-Barobirlik Pos üzerinden güvenli bir şekilde kredi kartınızla taksitle ödeyebilir veya aşağıdaki banka hesaplarımıza havale/EFT yapabilirsiniz.",
+    "barokart_url": "https://www.barokart.com.tr/",
+    "accounts": [
+      {
+        "bank_name": "Garanti BBVA",
+        "owner": "Mert A.",
+        "iban": "TR12 0006 2000 0000 1234 5678 90"
+      },
+      {
+        "bank_name": "Vakıfbank",
+        "owner": "Mert A.",
+        "iban": "TR98 0001 5001 5800 9876 5432 10"
+      }
+    ],
+    "show_bank_accounts": false
+  },
+  "logo": {
+    "name": "Av. Mert",
+    "surname": "A."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Güvenilir & Deneyimli Çözüm Ortağınız",
+    "content": "Kurucu Avukat Mert A. liderliğinde, müvekkillerimizin hukuki haklarını korumak ve uyuşmazlıkları en verimli şekilde sonuçlandırmak için profesyonel avukatlık hizmeti sunmaktayız. Bireysel ve kurumsal düzeyde yürüttüğümüz danışmanlık faaliyetlerinde gizlilik, şeffaflık ve dürüstlük ilkelerini temel alıyoruz.",
+    "years_experience": "12",
+    "resolved_cases": "450+",
+    "happy_clients": "380+"
+  },
+  "expertise": [
+    {
+      "title": "Ceza Hukuku",
+      "description": "Soruşturma aşamasından kovuşturmaya kadar olan tüm ceza yargılaması süreçlerinde müşteki, şüpheli ve sanık haklarının savunulması.",
+      "icon": "fa-solid fa-gavel"
+    },
+    {
+      "title": "Medeni Hukuk",
+      "description": "Çekişmeli boşanma davaları, velayet, nafaka, mal rejiminin tasfiyesi ile miras paylaşımı ve tenkis davaları.",
+      "icon": "fa-solid fa-users-rectangle"
+    },
+    {
+      "title": "Tazminat Hukuku",
+      "description": "Trafik kazaları, iş kazaları, malpraktis (doktor hatası) ve haksız fiillerden kaynaklanan maddi ve manevi tazminat davaları takibi.",
+      "icon": "fa-solid fa-hand-holding-dollar"
+    },
+    {
+      "title": "Gayrimenkul Hukuku",
+      "description": "Tapu iptal ve tescil davaları, ortaklığın giderilmesi (izale-i şüyu), kamulaştırmasız el atma ve tahliye davaları süreçleri.",
+      "icon": "fa-solid fa-building"
+    }
+  ],
+  "hero": {
+    "subtitle": "Savunma & Danışmanlık",
+    "title": "Av. Mert A.",
+    "description": "Hukuki uyuşmazlıkların çözümünde analitik yaklaşım, şeffaf bilgi akışı ve mesleki etik kuralları çerçevesinde yüksek kalitede savunma ve danışmanlık hizmeti sunmaktayız."
+  },
+  "gmb": {
+    "directions_url": "https://share.google/RmSQTgbFYYr8mi4vs",
+    "review_url": "https://search.google.com/local/writereview",
+    "maps_iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6504620023617!2d28.7885!3d40.9885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDU5JzE4LjYiTiAyOMKwNDcnMTguNiJF!5e0!3m2!1str!2str!4v1680000000000!5m2!1str!2str"
+  }
+}

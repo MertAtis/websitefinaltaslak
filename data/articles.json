@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "title": "İş Kazası Sonrası Maddi ve Manevi Tazminat Talepleri",
+      "date": "2026-05-15",
+      "summary": "İş kazası meydana geldiğinde işçinin veya yakınlarının talep edebileceği tazminat türleri, hak düşürücü süreler ve yargılama süreçleri hakkında detaylı rehber.",
+      "content": "İş kazası, işçinin iş yerinde veya işverenin otoritesi altında bulunduğu sırada meydana gelen ve bedensel ya da ruhsal zarara yol açan olaydır. Kazanın ardından işçi maddi ve manevi tazminat davası açabilir...",
+      "image": "images/law_gavel_cover.png",
+      "tags": ["Tazminat Hukuku", "İş Hukuku"],
+      "draft": false
+    },
+    {
+      "title": "Anlaşmalı Boşanma Davası Nasıl Açılır?",
+      "date": "2026-04-22",
+      "summary": "Anlaşmalı boşanma protokolünün hazırlanması, şartları, velayet ve nafaka konularının düzenlenmesi ve dava sürecinin aşamaları.",
+      "content": "Türk Medeni Kanunu'na göre, en az 1 yıl sürmüş evliliklerde eşlerin birlikte başvurması veya bir eşin davasını diğerinin kabul etmesi halinde evlilik birliği sarsılmış sayılır ve anlaşmalı boşanma kararı verilebilir...",
+      "image": null,
+      "tags": ["Aile Hukuku", "Boşanma"],
+      "draft": false
+    }
+  ]
+}
